@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WhatsOn.Views.MapsPage"
+             xmlns:gmaps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps" 
+             xmlns:vm="clr-namespace:WhatsOn.ViewModels">
+
+    <ContentPage.BindingContext>
+        <vm:MapViewModel/>
+    </ContentPage.BindingContext>
+    
+    <Grid>
+        <gmaps:Map x:Name="MyMap" MapType="Street" HasZoomEnabled="True" MyLocationEnabled="True" >
+            <gmaps:Map.ItemTemplate>
+                <DataTemplate>
+                    <gmaps:Pin Icon="{Binding PinIcon}" Position="{Binding Position}"
+                              Label="{Binding PinLabel}" />
+                </DataTemplate>
+            </gmaps:Map.ItemTemplate>
+        </gmaps:Map>
+    </Grid>
+</ContentPage>

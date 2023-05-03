@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:model="clr-namespace:WhatsOn.Models" 
+             xmlns:vm="clr-namespace:WhatsOn.ViewModels"
+             x:Class="WhatsOn.Views.EventsPage">
+
+    <ContentPage.BindingContext>
+        <vm:EventsViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView Grid.Row="1">
+        <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+                <Label x:Name="allEventslbl" Text="All Events:" FontSize="40" TextColor="Black"/>
+                <Button Text="" WidthRequest="30" HeightRequest="30" VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand" Clicked="ToggleFilterEvents" ></Button>
+            </StackLayout>
+            <Frame x:Name="FilterEventsLayout" IsVisible="false">
+                <StackLayout >
+                    <StackLayout >
+                        <Entry x:Name="filterName" Placeholder="Name" PlaceholderColor="Gray" Text="" WidthRequest="200" FontSize="20" />
+                        <Picker x:Name="filterCategory" WidthRequest="80" Title="Category" TitleColor="Gray" ItemsSource="{Binding categoryList}"  />
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox x:Name="chkStartDate" CheckedChanged="toggleEventsStartDate"/>
+                            <Label Text="Start Date:" FontSize="18" Margin="-8, 2, 0, 0" />                            
+                        </StackLayout>
+                        <DatePicker x:Name="dtStartEventsFilter" IsVisible="false" Format="D" Margin="30, -15, 0, 0"/>
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox x:Name="chkEndDate" CheckedChanged="toggleEventsEndDate"/>
+                            <Label Text="End Date:" FontSize="18" Margin="-8, 2, 0, 0" />
+                        </StackLayout>
+                        <DatePicker x:Name="dtEndEventsFilter" IsVisible="false" MinimumDate="{Binding Source={x:Reference dtStartEventsFilter}, Path=Date}" Format="D" Margin="30, -15, 0, 0" />
+                        <StackLayout Orientation="Horizontal">
+                            <Button Text="Clear" WidthRequest="100" HeightRequest="40" VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand" Clicked="clearEventsFilter" ></Button>
+                            <Button Text="Apply" WidthRequest="100" HeightRequest="40" VerticalOptions="EndAndExpand" HorizontalOptions="End" Clicked="filterEvents" ></Button>
+                        </StackLayout>
+
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+  
+            <CollectionView x:Name="EventsListView"
+                        ItemsSource="{Binding Events}"
+                        SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10" x:DataType="model:Event">
+                            <Image Source="{Binding IconPath}"></Image>
+                            <Label Text="{Binding Name}" 
+                        LineBreakMode="NoWrap" 
+                        Style="{DynamicResource ListItemTextStyle}" 
+                        FontSize="16" HorizontalOptions="Center" />
+                            <Label Text="{Binding Description}" 
+                                            LineBreakMode="NoWrap"
+                                            Style="{DynamicResource ListItemDetailTextStyle}"
+                                            FontSize="13" HorizontalOptions="Center" />
+                            <Label Text="{Binding DateOfEvent}" 
+                                            LineBreakMode="NoWrap"
+                                            Style="{DynamicResource ListItemDetailTextStyle}"
+                                            FontSize="13" HorizontalOptions="Center" />
+
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
