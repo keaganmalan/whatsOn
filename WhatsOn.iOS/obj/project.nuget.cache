@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "UgiOVHJkBOXZiNBIt8zETyg9DV8CBEzcFxzpML6Ob63vy8jgo4WvGVMHmLuQT4Jnc/xeDIUe+3Mwjj+6fvRZlw==",
+  "success": true,
+  "projectFilePath": "D:\\Nivek\\WhatsOn_Main\\WhatsOn\\WhatsOn.iOS\\WhatsOn.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\wimuser1\\.nuget\\packages\\communitytoolkit.mvvm\\8.1.0\\communitytoolkit.mvvm.8.1.0.nupkg.sha512",
+    "C:\\Users\\wimuser1\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
+    "C:\\Users\\wimuser1\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\wimuser1\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\wimuser1\\.nuget\\packages\\xamarin.build.download\\0.11.0\\xamarin.build.download.0.11.0.nupkg.sha512",
+    "C:\\Users\\wimuser1\\.nuget\\packages\\xamarin.essentials\\1.7.5\\xamarin.essentials.1.7.5.nupkg.sha512",
+    "C:\\Users\\wimuser1\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512",
+    "C:\\Users\\wimuser1\\.nuget\\packages\\xamarin.forms.googlemaps\\5.0.0\\xamarin.forms.googlemaps.5.0.0.nupkg.sha512",
+    "C:\\Users\\wimuser1\\.nuget\\packages\\xamarin.google.ios.maps\\6.0.1.1\\xamarin.google.ios.maps.6.0.1.1.nupkg.sha512"
+  ],
+  "logs": []
+}
